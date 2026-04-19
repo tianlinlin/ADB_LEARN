@@ -78,7 +78,7 @@ INTENT（意图） 是 am start 的核心参数，它描述了要启动哪个组
 
 ### 直接启动主activity（monkey指令）
 ```sh
-adb shell monkey -p <packagename> -c android.intent.category.LAUNCHER 1
+adb shell monkey -p <packagename> 9
 ```
 1. 解释参数：
    1. monkey
@@ -175,3 +175,10 @@ adb exec-out screencap -p > D:\screenshots\sc.png
 adb exec-out screencap -p > screenshots/sc.png
 ```
 如果没有文件夹，会报错，需要用os方法mkdir
+
+### 连接adb
+一般的,打开一个模拟器，会自动connect 这时候输入devices指令能够看到这个模拟器的默认端口，然而有时候并不会如此所以需要我们手动connect
+```sh
+adb connect 127.0.0.1:7555 
+```
+以上是mumu模拟器的默认端口
